@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Images</title>
+</head>
+<body>
+    <canvas id="logoCanvas" width="200" height="200"></canvas>
+    <canvas id="profileCanvas" width="200" height="200"></canvas>
+    <script>
+        // Generate Logo
+        const logoCanvas = document.getElementById('logoCanvas');
+        const logoCtx = logoCanvas.getContext('2d');
+        
+        // Draw blue circle background
+        logoCtx.beginPath();
+        logoCtx.arc(100, 100, 90, 0, Math.PI * 2);
+        logoCtx.fillStyle = '#3498db';
+        logoCtx.fill();
+        
+        // Draw white square
+        logoCtx.fillStyle = 'white';
+        logoCtx.fillRect(60, 60, 80, 80);
+        
+        // Draw letter W
+        logoCtx.fillStyle = '#2c3e50';
+        logoCtx.font = 'bold 60px Arial';
+        logoCtx.textAlign = 'center';
+        logoCtx.fillText('W', 100, 120);
+        
+        // Generate Profile
+        const profileCanvas = document.getElementById('profileCanvas');
+        const profileCtx = profileCanvas.getContext('2d');
+        
+        // Draw dark circle background
+        profileCtx.beginPath();
+        profileCtx.arc(100, 100, 90, 0, Math.PI * 2);
+        profileCtx.fillStyle = '#34495e';
+        profileCtx.fill();
+        
+        // Draw head
+        profileCtx.beginPath();
+        profileCtx.arc(100, 80, 40, 0, Math.PI * 2);
+        profileCtx.fillStyle = '#ecf0f1';
+        profileCtx.fill();
+        
+        // Draw body
+        profileCtx.beginPath();
+        profileCtx.moveTo(60, 140);
+        profileCtx.quadraticCurveTo(100, 100, 140, 140);
+        profileCtx.strokeStyle = '#ecf0f1';
+        profileCtx.lineWidth = 40;
+        profileCtx.stroke();
+        
+        // Draw smile
+        profileCtx.beginPath();
+        profileCtx.moveTo(80, 90);
+        profileCtx.quadraticCurveTo(100, 100, 120, 90);
+        profileCtx.strokeStyle = '#2c3e50';
+        profileCtx.lineWidth = 4;
+        profileCtx.stroke();
+        
+        // Convert to PNG and download
+        const logoLink = document.createElement('a');
+        logoLink.download = 'logo.png';
+        logoLink.href = logoCanvas.toDataURL('image/png');
+        logoLink.click();
+        
+        const profileLink = document.createElement('a');
+        profileLink.download = 'profile.png';
+        profileLink.href = profileCanvas.toDataURL('image/png');
+        profileLink.click();
+    </script>
+</body>
+</html> 

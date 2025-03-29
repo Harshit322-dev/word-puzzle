@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Puzzle Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background-color: #2c3e50;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: #3498db;
+        }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .score-board, .daily-winner {
+            padding: 0.5rem 1rem;
+            background-color: #34495e;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .score-board:hover, .daily-winner:hover {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="http://localhost:3000" class="logo">
+            <img src="logo.png" alt="Word Puzzle Logo">
+            Word Puzzle Game
+        </a>
+        <div class="nav-right">
+            <a href="#" class="nav-item score-board">
+                <i class="fas fa-trophy"></i> Score Board
+            </a>
+            <a href="#" class="nav-item daily-winner">
+                <i class="fas fa-crown"></i> Daily Winner
+            </a>
+            <a href="#" class="nav-item">
+                <img src="profile.png" alt="Profile" class="profile-pic">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html>
